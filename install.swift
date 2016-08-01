@@ -106,7 +106,7 @@ if podsInstalled.rangeOfString("no") != nil {
 
 // Install all of the pods
 print("Updating and installing Cocoapods...")
-run("-c","rm -rf ~/.cocoapods/repo/popcorntimetv","pod cache clean --all","rm -rf ~/Library/Developer/Xcode/DerivedData/PopcornTime-*","", "pod install", "pod update")
+run("-c","rm -rf ~/.cocoapods/repo/popcorntimetv","pod cache clean --all","rm -rf ~/Library/Developer/Xcode/DerivedData/PopcornTime-*", "pod install", "pod update")
 
 
 // Open Xcode
