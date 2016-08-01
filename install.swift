@@ -46,6 +46,7 @@ func run(args: String...) -> Int32 {
     let task = NSTask()
     task.launchPath = "/bin/bash"
     task.arguments = args
+    print(args)
     task.launch()
     task.waitUntilExit()
     return task.terminationStatus
@@ -106,7 +107,11 @@ if podsInstalled.rangeOfString("no") != nil {
 
 // Install all of the pods
 print("Updating and installing Cocoapods...")
-run("-c","rm -rf ~/.cocoapods/repo/popcorntimetv","pod cache clean --all","rm -rf ~/Library/Developer/Xcode/DerivedData/PopcornTime-*", "pod install", "pod update")
+run("-c","rm -rf ~/.cocoapods/repo/popcorntimetv")
+run("-c","pod cache clean --all")
+run("-c","rm -rf ~/Library/Developer/Xcode/DerivedData/PopcornTime-*")
+run("-c","pod install")
+run("-c","pod update")
 
 
 // Open Xcode
